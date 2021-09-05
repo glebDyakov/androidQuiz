@@ -6,12 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/questionImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:translationY="65dp"
+        app:layout_constraintBottom_toTopOf="@+id/variantGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/barcode" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:progress="20"
+        android:translationY="-300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/questionDetector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Вопрос 1 из 5"
-        android:translationY="-150dp"
+        android:translationY="-250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,52 +55,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
-        android:id="@+id/variantOne"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ответ №1"
-        android:translationX="-50dp"
+    <RadioGroup
+        android:id="@+id/variantGroup"
+        android:layout_width="365dp"
+        android:layout_height="331dp"
+        android:checkedButton="@id/variantOne"
+        android:clipChildren="false"
+        android:translationX="25dp"
+        android:translationY="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72">
 
-    <RadioButton
-        android:id="@+id/variantTwo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ответ №2"
-        android:translationX="-50dp"
-        android:translationY="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RadioButton
+            android:id="@+id/variantOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ответ №1"
+            android:translationX="50dp"
+            android:translationY="0dp" />
 
-    <RadioButton
-        android:id="@+id/variantThree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ответ №3"
-        android:translationX="-50dp"
-        android:translationY="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RadioButton
+            android:id="@+id/variantTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ответ №2"
+            android:translationX="50dp"
+            android:translationY="0dp" />
 
-    <RadioButton
-        android:id="@+id/variantFour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ответ №4"
-        android:translationX="-50dp"
-        android:translationY="225dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RadioButton
+            android:id="@+id/variantThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ответ №3"
+            android:translationX="50dp"
+            android:translationY="0dp" />
+
+        <RadioButton
+            android:id="@+id/variantFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ответ №4"
+            android:translationX="50dp"
+            android:translationY="0dp" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/nextQuestionBtn"
